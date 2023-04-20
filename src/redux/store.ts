@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import languagesRedcuer from './languages';
+import formSlice from './form';
 
 export const store = configureStore({
   reducer: {
-    "languages":languagesRedcuer
+    "languages":languagesRedcuer,
+    'form':formSlice
   },
 });
 

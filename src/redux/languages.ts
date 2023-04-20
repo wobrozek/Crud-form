@@ -6,12 +6,23 @@ const languages:any={
         name:'polish',
         main:'Strona główna',
         view:'Podgląd',
+        formName:'Imię',
+        formAge:'Wiek',
+        formBirthday:'Data urodzenia',
+        formAbout:'Życiorys',
+        send:'Wyślij',
         languages:{'polish':['Polski',0],'english':['Angielski',1]}
     },
     english:{
         name:'english',
         main:'MainPage',
         view:'View Page',
+        formName:'Name',
+        formAge:'Age',
+        formBirthday:'birth Date',
+        formAbout:'About you',
+        send:'Send',
+        
         languages:{'polish':['Polish',0],'english':['English',1]}
     }
 }
