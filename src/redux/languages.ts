@@ -11,6 +11,15 @@ const languages:any={
         formBirthday:'Data urodzenia',
         formAbout:'Życiorys',
         send:'Wyślij',
+        formErrors:{
+            "type":"Zły typ danych",
+            "reqiured":"To pole jest wymagane",
+            "ageNegative":"Wiek nie moze być liczbą ujemną",
+            "ageLarge":"Podany wiek jest zbyt duży",
+            "aboutMax":"maksymalna ilosc znakow to 250",
+            "dateFuture":"rok urodzenia musi być datą z przeszłości",
+            "dateToOld":"podana data urodzenia jest zbyt odległa",
+        },
         languages:{'polish':['Polski',0],'english':['Angielski',1]}
     },
     english:{
@@ -22,6 +31,15 @@ const languages:any={
         formBirthday:'birth Date',
         formAbout:'About you',
         send:'Send',
+        formErrors:{
+            "type":"Wron data type",
+            "reqiured":"This field is required",
+            "ageNegative":"Age must be positive number",
+            "ageLarge":"Your age is above allowed max age ",
+            "aboutMax":"Max limit of characters is 250",
+            "dateFuture":"Birthday can't be a date in the future",
+            "dateToOld":"Your birthday is above allowed max age",
+        },
         
         languages:{'polish':['Polish',0],'english':['English',1]}
     }

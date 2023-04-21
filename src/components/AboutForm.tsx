@@ -25,10 +25,19 @@ const AboutForm = () => {
   //   function getBirthdayByAge(value: Date, age: Number) {}
 
   const schema = yup.object().shape({
-    name: yup.string().required(),
-    age: yup.number().positive().integer().max(130).required(),
-    about: yup.string().max(250),
-    birthDate: yup.date().max(getMaxDate()).min(getMinDate()).required(),
+    name: yup.string().typeError(text.formErrors.type).required(text.formErrors.required),
+    age: yup
+      .number().typeError(text.formErrors.type)
+      .positive(text.formErrors.ageNegative)
+      .integer(text.formErrors.type)
+      .max(130, text.formErrors.ageLarge)
+      .required(text.formErrors.required),
+    about: yup.string().typeError(text.formErrors.type).max(250, text.formErrors.aboutMax),
+    birthDate: yup
+      .date().typeError(text.formErrors.type)
+      .max(getMaxDate(), text.formErrors.dateToOld)
+      .min(getMinDate(), text.formErrors.dateFuture)
+      .required(text.formErrors.dateFuture),
   });
 
   const {
