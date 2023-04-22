@@ -13,7 +13,7 @@ const languages:any={
         send:'Wyślij',
         formErrors:{
             "type":"Zły typ danych",
-            "reqiured":"To pole jest wymagane",
+            "required":"To pole jest wymagane",
             "ageNegative":"Wiek nie moze być liczbą ujemną",
             "ageLarge":"Podany wiek jest zbyt duży",
             "aboutMax":"maksymalna ilosc znakow to 250",
@@ -32,8 +32,8 @@ const languages:any={
         formAbout:'About you',
         send:'Send',
         formErrors:{
-            "type":"Wron data type",
-            "reqiured":"This field is required",
+            "type":"Wrong data type",
+            "required":"This field is required",
             "ageNegative":"Age must be positive number",
             "ageLarge":"Your age is above allowed max age ",
             "aboutMax":"Max limit of characters is 250",

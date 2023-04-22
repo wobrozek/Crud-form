@@ -25,9 +25,21 @@ const formSlice = createSlice({
     initialState:initialState,
     reducers:{
         add: (state,data:PayloadAction<Form>)=>{
-                data.payload.id=state.id;
-                state.id=state.id + 1
-                state.people=[...state.people,data.payload]
+            // if id is null add new Form to array
+                if(!data.payload?.id){
+                    data.payload.id=state.id;
+                    state.id=state.id + 1
+                    state.people=[...state.people,data.payload]
+                }
+            // if id exist modify existing record
+                else{
+                    state.people.map((element)=>{
+                        if(element.id === data.payload.id ){
+                            return data.payload;
+                        }
+                    })
+                }
+                
             },
         delete:(state,id:PayloadAction<number>)=>{
                 state.people.map((element)=>{
@@ -35,7 +47,6 @@ const formSlice = createSlice({
                         return element
                     }
                 })
-            
         },
     }
 });
