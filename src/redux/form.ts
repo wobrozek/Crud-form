@@ -41,16 +41,14 @@ const formSlice = createSlice({
                 }
                 
             },
-        delete:(state,id:PayloadAction<number>)=>{
-                state.people.map((element)=>{
-                    if(element.id!=id.payload){
-                        return element
-                    }
+        remove:(state,id:PayloadAction<number>)=>{
+                state.people=state.people.filter((element)=>{
+                    element.id !== id.payload
                 })
         },
-    }
+    },
 });
 
-export const {add}= formSlice.actions
+export const { add,remove}= formSlice.actions
 
 export default formSlice.reducer

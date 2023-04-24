@@ -10,6 +10,7 @@ const languages:any={
         formAge:'Wiek',
         formBirthday:'Data urodzenia',
         formAbout:'Życiorys',
+        formAction:'Akcje',
         send:'Wyślij',
         formErrors:{
             "type":"Zły typ danych",
@@ -20,6 +21,10 @@ const languages:any={
             "dateFuture":"rok urodzenia musi być datą z przeszłości",
             "dateToOld":"podana data urodzenia jest zbyt odległa",
         },
+        deleteButton:"Usuń",
+        deleteChecked:"Usuń zaznaczone",
+        editButton:"Edytuj",
+
         languages:{'polish':['Polski',0],'english':['Angielski',1]}
     },
     english:{
@@ -30,6 +35,7 @@ const languages:any={
         formAge:'Age',
         formBirthday:'birth Date',
         formAbout:'About you',
+        formAction:'Action',
         send:'Send',
         formErrors:{
             "type":"Wrong data type",
@@ -40,6 +46,9 @@ const languages:any={
             "dateFuture":"Birthday can't be a date in the future",
             "dateToOld":"Your birthday is above allowed max age",
         },
+        deleteButton:"Delete",
+        deleteChecked:"Delete checked",
+        editButton:"Edit",
         
         languages:{'polish':['Polish',0],'english':['English',1]}
     }
