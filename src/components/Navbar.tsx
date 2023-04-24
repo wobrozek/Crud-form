@@ -14,9 +14,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <NavLink to="/main">{text.main}</NavLink>
-      <NavLink to="/view">{text.view}</NavLink>
+    <header className="navbar">
+      <nav>
+        <NavLink to="/main">{text.main}</NavLink>
+        <NavLink to="/view">{text.view}</NavLink>
+      </nav>
 
       <Select onChange={(e) => handleChange(e)} value={text.name}>
         {Object.entries(text.languages).map(([name, arr]) => {
@@ -27,7 +29,7 @@ const Navbar = () => {
           );
         })}
       </Select>
-    </nav>
+    </header>
   );
 };
 

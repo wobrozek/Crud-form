@@ -12,6 +12,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 const AboutForm = () => {
   const text = useSelector((state: RootState) => state.languages.text);
+
   const dispatch = useDispatch();
 
   function getMaxDate(): Date {
@@ -21,8 +22,6 @@ const AboutForm = () => {
   function getMinDate(): Date {
     return new Date(1900, 1, 1);
   }
-
-  //   function getBirthdayByAge(value: Date, age: Number) {}
 
   const schema = yup.object().shape({
     name: yup
@@ -67,7 +66,10 @@ const AboutForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="formAbout" onSubmit={handleSubmit(onSubmit)}>
+      {/* specjal id to edit existing records  */}
+      <TextField style={{ display: "none" }} {...register("id")}></TextField>
+
       <TextField
         error={!!errors.name}
         label={text.formName}
@@ -75,10 +77,10 @@ const AboutForm = () => {
         helperText={errors.name?.message?.toString()}
       ></TextField>
       <TextField
+        {...register("age")}
         error={!!errors.age}
         label={text.formAge}
         type="number"
-        {...register("age")}
         helperText={errors.age?.message?.toString()}
       ></TextField>
       <TextField

@@ -4,6 +4,7 @@ import {
   GridActionsCellItem,
   GridColDef,
   GridRowId,
+  GridRowModel,
 } from "@mui/x-data-grid";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
@@ -20,13 +21,12 @@ const AboutTable = () => {
   const dispatch = useDispatch();
 
   const handleChangeSubmit = (items: number[]) => {
-    // setChecked(items);
-    console.log("hej");
+    setChecked(items);
   };
 
   const handleEdit = React.useCallback(
-    (id: GridRowId) => () => {
-      console.log(id);
+    (newRow: GridRowModel) => () => {
+      console.log(newRow);
     },
     []
   );
@@ -46,17 +46,20 @@ const AboutTable = () => {
         field: "name",
         headerName: text.formName,
         width: 130,
+        editable: true,
       },
       {
         field: "age",
         headerName: text.formAge,
         width: 130,
+        editable: true,
       },
       {
         field: "birthday",
         headerName: text.formBirthday,
         type: "date",
         width: 90,
+        editable: true,
       },
       {
         field: "about",
@@ -64,6 +67,7 @@ const AboutTable = () => {
         description: "This column has a value getter and is not sortable.",
         sortable: false,
         width: 160,
+        editable: true,
       },
       {
         field: "action",
@@ -85,10 +89,12 @@ const AboutTable = () => {
     ],
     [handleDelete, handleEdit]
   );
-
-  if (people.length !== 0) {
-    return (
-      <>
+  return (
+    <section className="aboutWrapper">
+      <div
+        className="aboutTable"
+        style={people.length === 0 ? { display: "none" } : { display: "block" }}
+      >
         <DataGrid
           rows={people}
           columns={columns}
@@ -99,12 +105,11 @@ const AboutTable = () => {
             pagination: { paginationModel: { pageSize: 10 } },
           }}
           pageSizeOptions={[10, 20, 50]}
-          onRowSelectionModelChange={handleChangeSubmit}
         />
         <Button variant="contained">{text.deleteChecked}</Button>
-      </>
-    );
-  }
+      </div>
+    </section>
+  );
 };
 
 export default AboutTable;

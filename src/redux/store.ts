@@ -5,7 +5,7 @@ import formSlice from './form';
 export const store = configureStore({
   reducer: {
     "languages":languagesRedcuer,
-    'form':formSlice
+    'form':formSlice,
   },
 });
 

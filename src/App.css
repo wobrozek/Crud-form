@@ -1,42 +1,69 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html, body {
+  height: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1.4em;
+  vertical-align: baseline;
+  text-decoration: none;
+  outline: 0;
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+fieldset {
+  bottom: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+html {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
-.card {
-  padding: 2em;
+.navbar {
+  background-color: #1e90ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  color: #ced6e0;
+  height: 150px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(90% - 1vw));
+}
+.navbar a {
+  padding: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+a {
+  font-size: 20px;
+  color: #ced6e0;
 }
+
+a:hover {
+  color: #fff;
+}
+
+.formAbout {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 50px auto;
+  gap: 20px;
+  background-color: #fff;
+}
+
+.aboutWrapper {
+  background-color: #ced6e0;
+  width: 100%;
+  padding: 50px 0;
+  height: 100%;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 60px);
+}
+
+.aboutTable {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+/*# sourceMappingURL=App.css.map */

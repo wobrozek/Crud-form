@@ -11,7 +11,7 @@ export type Form ={
 
 interface peopleState{
     people:Form[];
-    id:Number;
+    id:Number
 }
 
 const initialState:peopleState = {
@@ -31,24 +31,23 @@ const formSlice = createSlice({
                     state.id=state.id + 1
                     state.people=[...state.people,data.payload]
                 }
-            // if id exist modify existing record
-                else{
-                    state.people.map((element)=>{
-                        if(element.id === data.payload.id ){
-                            return data.payload;
-                        }
-                    })
-                }
-                
             },
         remove:(state,id:PayloadAction<number>)=>{
                 state.people=state.people.filter((element)=>{
-                    element.id !== id.payload
+                    return element.id !== id.payload
                 })
         },
+        edit:(state,data:PayloadAction<Form>)=>{
+                state.people=state.people.map((element)=>{
+                    if(element.id === data.payload.id ){
+                        return data.payload;
+                    }
+                    return element
+                })
+        }
     },
 });
 
-export const { add,remove}= formSlice.actions
+export const { add,remove,edit}= formSlice.actions
 
 export default formSlice.reducer
