@@ -1,19 +1,27 @@
-import React from "react";
+import React, { FC } from "react";
 import { Button, TextField } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers";
-import { useForm, Controller } from "react-hook-form";
+import {
+  useForm,
+  Controller,
+  FieldValues,
+  SubmitHandler,
+} from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { add, Form } from "../redux/form";
+import { Form } from "../redux/form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-const AboutForm = () => {
-  const text = useSelector((state: RootState) => state.languages.text);
+interface FormProps {
+  onSubmit: (data: Form) => void;
+  defaultValue?: Form;
+}
 
-  const dispatch = useDispatch();
+const AboutForm: FC<FormProps> = (props) => {
+  const text = useSelector((state: RootState) => state.languages.text);
 
   function getMaxDate(): Date {
     return new Date();
@@ -56,23 +64,19 @@ const AboutForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: Form) => {
-    data.birthDate = data.birthDate.toLocaleDateString();
-    dispatch(add(data));
-  };
-
   const handleDataChange = (date: Date) => {
     setValue("birthDate", date);
   };
 
   return (
-    <form className="formAbout" onSubmit={handleSubmit(onSubmit)}>
+    <form className="formAbout" onSubmit={handleSubmit(props.onSubmit)}>
       {/* specjal id to edit existing records  */}
       <TextField style={{ display: "none" }} {...register("id")}></TextField>
 
       <TextField
         error={!!errors.name}
         label={text.formName}
+        defaultValue={props?.defaultValue?.name}
         {...register("name")}
         helperText={errors.name?.message?.toString()}
       ></TextField>
@@ -80,12 +84,14 @@ const AboutForm = () => {
         {...register("age")}
         error={!!errors.age}
         label={text.formAge}
+        defaultValue={props?.defaultValue?.age}
         type="number"
         helperText={errors.age?.message?.toString()}
       ></TextField>
       <TextField
         error={!!errors.about}
         label={text.formAbout}
+        defaultValue={props?.defaultValue?.about}
         multiline
         rows={4}
         {...register("about")}

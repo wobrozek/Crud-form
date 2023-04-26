@@ -2,7 +2,6 @@ import React, { useMemo, useState } from "react";
 import {
   DataGrid,
   GridActionsCellItem,
-  GridColDef,
   GridRowId,
   GridRowModel,
 } from "@mui/x-data-grid";
@@ -91,23 +90,25 @@ const AboutTable = () => {
       className="aboutWrapper"
       style={people.length === 0 ? { display: "none" } : { display: "block" }}
     >
-      <div className="aboutTable">
-        <DataGrid
-          rows={people}
-          columns={columns}
-          checkboxSelection
-          disableRowSelectionOnClick
-          disableColumnSelector
-          onRowSelectionModelChange={handleChangeSubmit}
-          initialState={{
-            pagination: { paginationModel: { pageSize: 10 } },
-          }}
-          pageSizeOptions={[10, 20, 50]}
-        />
-        <Button variant="contained" onClick={handleDeleteChecked}>
-          {text.deleteChecked}
-        </Button>
-      </div>
+      {people && (
+        <div className="aboutTable">
+          <DataGrid
+            rows={people}
+            columns={columns}
+            checkboxSelection
+            disableRowSelectionOnClick
+            disableColumnSelector
+            onRowSelectionModelChange={handleChangeSubmit}
+            initialState={{
+              pagination: { paginationModel: { pageSize: 10 } },
+            }}
+            pageSizeOptions={[10, 20, 50]}
+          />
+          <Button variant="contained" onClick={handleDeleteChecked}>
+            {text.deleteChecked}
+          </Button>
+        </div>
+      )}
     </section>
   );
 };
