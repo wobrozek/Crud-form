@@ -1,0 +1,118 @@
+$primarry-color:#1e90ff;
+$font-basic:"Roboto","Helvetica","Arial",sans-serif;
+$white-gray:#ced6e0;
+
+html, body{
+  height:100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1.4em;
+  vertical-align: baseline;
+  text-decoration: none;
+  outline: 0;
+  box-sizing: border-box;
+  }
+
+fieldset{
+  bottom: 5px;
+}
+
+html{
+  font-family: $font-basic;
+}
+
+.navbar{
+  background-color: $primarry-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 50px;
+  color: $white-gray;
+  height: 150px;
+  margin-bottom: 50px;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(90% - 1vw)
+  );
+
+  a{
+    padding: 20px;
+  }
+}
+
+a{
+  font-size: 20px;
+  color: $white-gray;
+}
+
+a:hover{
+  color: #fff;
+}
+
+.formAbout{
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 50px auto;
+  gap:20px;
+  background-color: #fff;
+}
+
+.aboutWrapper{
+  background-color: #ced6e0;
+  width: 100%;
+  padding: 50px 0;
+  height: 100%;
+
+  clip-path: polygon(
+    0 100%,
+    100% 100%,
+    100% 0,
+    0 60px
+  );
+}
+
+.aboutTable{
+  max-width: 800px;
+  margin:0 auto;
+}
+
+.view{
+  padding: 0 50px 50px 50px;
+}
+
+.view__grid{
+  display: grid;
+  gap: 50px;
+  width: 100%;
+  grid-template-columns: repeat(4,1fr);
+}
+
+.personBox{
+  background-color: $white-gray;
+  padding: 40px;
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 1vw)
+  );
+
+  li{
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  h3{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}

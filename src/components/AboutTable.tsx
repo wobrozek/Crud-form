@@ -90,11 +90,11 @@ const AboutTable = () => {
     [handleDelete, handleEdit]
   );
   return (
-    <section className="aboutWrapper">
-      <div
-        className="aboutTable"
-        style={people.length === 0 ? { display: "none" } : { display: "block" }}
-      >
+    <section
+      className="aboutWrapper"
+      style={people.length === 0 ? { display: "none" } : { display: "block" }}
+    >
+      <div className="aboutTable">
         <DataGrid
           rows={people}
           columns={columns}

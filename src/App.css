@@ -29,6 +29,7 @@ html {
   padding: 0 50px;
   color: #ced6e0;
   height: 150px;
+  margin-bottom: 50px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(90% - 1vw));
 }
 .navbar a {
@@ -63,7 +64,32 @@ a:hover {
 
 .aboutTable {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 0 auto;
+}
+
+.view {
+  padding: 0 50px 50px 50px;
+}
+
+.view__grid {
+  display: grid;
+  gap: 50px;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.personBox {
+  background-color: #ced6e0;
+  padding: 40px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 1vw));
+}
+.personBox li {
+  list-style: none;
+  margin-top: 10px;
+}
+.personBox h3 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */

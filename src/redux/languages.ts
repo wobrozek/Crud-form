@@ -12,6 +12,8 @@ const languages:any={
         formAbout:'Życiorys',
         formAction:'Akcje',
         send:'Wyślij',
+        errorPage:'Error 404: zły adres URL',
+        emptyPage:'Dodaj dane do formularza by pojawiły się tutaj',
         formErrors:{
             "type":"Zły typ danych",
             "required":"To pole jest wymagane",
@@ -37,6 +39,8 @@ const languages:any={
         formAbout:'About you',
         formAction:'Action',
         send:'Send',
+        errorPage:'Error 404: wrong URL',
+        emptyPage:'Submit form to fill this page',
         formErrors:{
             "type":"Wrong data type",
             "required":"This field is required",
