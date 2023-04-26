@@ -11,7 +11,7 @@ import { RootState } from "../redux/store";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { remove } from "../redux/form";
+import { remove, removeMultiple } from "../redux/form";
 
 const AboutTable = () => {
   const text = useSelector((state: RootState) => state.languages.text);
@@ -38,7 +38,9 @@ const AboutTable = () => {
     []
   );
 
-  const handleDeleteChecked = (e: React.MouseEvent<HTMLElement>) => {};
+  const handleDeleteChecked = (e: React.MouseEvent<HTMLElement>) => {
+    dispatch(removeMultiple(checked));
+  };
 
   const columns = useMemo(
     () => [
@@ -46,20 +48,16 @@ const AboutTable = () => {
         field: "name",
         headerName: text.formName,
         width: 130,
-        editable: true,
       },
       {
         field: "age",
         headerName: text.formAge,
-        width: 130,
-        editable: true,
+        width: 60,
       },
       {
-        field: "birthday",
+        field: "birthDate",
         headerName: text.formBirthday,
-        type: "date",
-        width: 90,
-        editable: true,
+        width: 160,
       },
       {
         field: "about",
@@ -67,7 +65,6 @@ const AboutTable = () => {
         description: "This column has a value getter and is not sortable.",
         sortable: false,
         width: 160,
-        editable: true,
       },
       {
         field: "action",
@@ -101,12 +98,15 @@ const AboutTable = () => {
           checkboxSelection
           disableRowSelectionOnClick
           disableColumnSelector
+          onRowSelectionModelChange={handleChangeSubmit}
           initialState={{
             pagination: { paginationModel: { pageSize: 10 } },
           }}
           pageSizeOptions={[10, 20, 50]}
         />
-        <Button variant="contained">{text.deleteChecked}</Button>
+        <Button variant="contained" onClick={handleDeleteChecked}>
+          {text.deleteChecked}
+        </Button>
       </div>
     </section>
   );

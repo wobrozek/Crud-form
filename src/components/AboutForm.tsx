@@ -57,7 +57,7 @@ const AboutForm = () => {
   });
 
   const onSubmit = (data: Form) => {
-    data.birthDate = data.birthDate.toISOString();
+    data.birthDate = data.birthDate.toLocaleDateString();
     dispatch(add(data));
   };
 

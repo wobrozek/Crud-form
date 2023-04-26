@@ -6,7 +6,7 @@ export type Form ={
     name:string,
     age:number,
     about: string,
-    birthDate: Date | string,
+    birthDate: string | Date,
 }
 
 interface peopleState{
@@ -37,6 +37,11 @@ const formSlice = createSlice({
                     return element.id !== id.payload
                 })
         },
+        removeMultiple:(state,ids:PayloadAction<number[]>)=>{
+            state.people=state.people.filter((element)=>{
+                return !ids.payload.includes(element.id)
+            })
+        },
         edit:(state,data:PayloadAction<Form>)=>{
                 state.people=state.people.map((element)=>{
                     if(element.id === data.payload.id ){
@@ -48,6 +53,6 @@ const formSlice = createSlice({
     },
 });
 
-export const { add,remove,edit}= formSlice.actions
+export const { add,remove,edit,removeMultiple}= formSlice.actions
 
 export default formSlice.reducer
