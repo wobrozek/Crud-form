@@ -7,10 +7,11 @@ import {
 } from "@mui/x-data-grid";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
-import { Button } from "@mui/material";
+import { Button, Dialog } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { remove, removeMultiple } from "../redux/form";
+import DialogForm from "./DialogForm";
 
 const AboutTable = () => {
   const text = useSelector((state: RootState) => state.languages.text);
@@ -22,13 +23,6 @@ const AboutTable = () => {
   const handleChangeSubmit = (items: number[]) => {
     setChecked(items);
   };
-
-  const handleEdit = React.useCallback(
-    (newRow: GridRowModel) => () => {
-      console.log(newRow);
-    },
-    []
-  );
 
   const handleDelete = React.useCallback(
     (id: GridRowId) => () => {
@@ -75,15 +69,11 @@ const AboutTable = () => {
             label="Delete"
             onClick={handleDelete(params.id)}
           />,
-          <GridActionsCellItem
-            icon={<EditIcon />}
-            label="Edit"
-            onClick={handleEdit(params.id)}
-          />,
+          <DialogForm />,
         ],
       },
     ],
-    [handleDelete, handleEdit]
+    [handleDelete]
   );
   return (
     <section
