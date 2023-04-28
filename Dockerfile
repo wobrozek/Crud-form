@@ -1,6 +1,6 @@
 FROM node:16-alpine
 
-EXPOSE 5173
+EXPOSE 8080
 
 WORKDIR /react-vite-app
 
