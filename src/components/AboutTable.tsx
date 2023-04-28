@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { Button, Dialog } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import { remove, removeMultiple } from "../redux/form";
 import DialogForm from "./DialogForm";
 
@@ -69,7 +68,7 @@ const AboutTable = () => {
             label="Delete"
             onClick={handleDelete(params.id)}
           />,
-          <DialogForm />,
+          <DialogForm id={params.id} />,
         ],
       },
     ],

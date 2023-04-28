@@ -1,24 +1,33 @@
 import { Dialog, DialogContent } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AboutForm from "./AboutForm";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Form, edit } from "../redux/form";
 import EditIcon from "@mui/icons-material/Edit";
 import { GridActionsCellItem, GridRowModel } from "@mui/x-data-grid";
+import { RootState } from "../redux/store";
+import dayjs from "dayjs";
 
-const DialogForm = () => {
+const DialogForm = (id) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  const [dataDialog, setDataDialog] = useState({
-    id: 0,
-    name: "wojtek",
-    age: "32",
-    birthDate: "20/30/2000",
-  });
+  const [dataDialog, setDataDialog] = useState<Form>();
+  const people = useSelector((state: RootState) => state.form.people);
 
-  const handleClick = (row: GridRowModel) => {
+  const handleClick = () => {
     setOpen(!open);
-    console.log(row);
+    let human = {
+      ...people.filter((element) => {
+        return element.id == id.id;
+      }),
+    };
+
+    let humanCopy = { ...human[0] };
+
+    humanCopy.birthDate = humanCopy.birthDate.replace(".", "/");
+    humanCopy.birthDate = dayjs(humanCopy.birthDate);
+
+    setDataDialog(humanCopy);
   };
 
   const onSubmit = (data: Form) => {

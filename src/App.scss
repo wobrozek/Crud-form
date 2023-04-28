@@ -45,6 +45,10 @@ html{
   a{
     padding: 20px;
   }
+
+  div{
+    color: $white-gray;
+  }
 }
 
 a{
@@ -81,7 +85,7 @@ a:hover{
 
 .aboutTable{
   max-width: 800px;
-  margin:0 auto;
+  margin: 50px auto 0 auto;
 }
 
 .view{
@@ -95,16 +99,14 @@ a:hover{
   grid-template-columns: repeat(4,1fr);
 }
 
+
 .personBox{
   background-color: $white-gray;
   padding: 40px;
 
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    0 calc(100% - 1vw)
-  );
+  -webkit-box-shadow: 8px 8px 24px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px -14px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px -14px rgba(66, 68, 90, 1);
 
   li{
     list-style: none;
@@ -114,5 +116,47 @@ a:hover{
   h3{
     text-align: center;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width:1024px){
+  .view__grid{
+    gap: 25px;
+  }
+  
+  
+  .personBox{
+    padding: 20px;
+  }
+}
+
+@media(max-width:768px){
+  .view__grid{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .view{
+    padding: 0 25px 50px 25px;
+  }
+
+  .navbar{
+    padding: 0 25px;
+    
+    a{
+      padding: 10px;
+    }
+  }
+}
+
+@media(max-width:425px){
+
+  .navbar{
+    padding: 0 10px;
+    
+    
+    a{
+      padding: 10px;
+      font-size: 15px;
+    }
   }
 }

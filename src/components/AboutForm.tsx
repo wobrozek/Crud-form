@@ -1,19 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { Button, TextField } from "@mui/material";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers";
-import {
-  useForm,
-  Controller,
-  FieldValues,
-  SubmitHandler,
-} from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Form } from "../redux/form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Dayjs } from "dayjs";
 
 interface FormProps {
   onSubmit: (data: Form) => void;
@@ -101,6 +97,7 @@ const AboutForm: FC<FormProps> = (props) => {
         <DatePicker
           onChange={handleDataChange}
           format="DD/MM/YYYY"
+          defaultValue={props?.defaultValue?.birthDate}
           slotProps={{
             textField: {
               helperText: errors.birthDate?.message?.toString(),
