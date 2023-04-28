@@ -3,10 +3,10 @@ FROM node:16-alpine as vite
 
 WORKDIR /react-vite-app
 
-COPY . .
+COPY ./dist .
+COPY ./package.json .
 
 RUN npm install
-RUN npm run build
 
 #nginx configuration
 
