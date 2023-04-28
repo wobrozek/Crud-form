@@ -3,9 +3,7 @@ FROM node:16-alpine as vite
 
 WORKDIR /react-vite-app
 
-COPY package.json .
-COPY ./src .
-COPY index.html .
+COPY . .
 
 RUN npm install
 RUN npm run build
