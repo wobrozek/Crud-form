@@ -55,6 +55,7 @@ a:hover {
   margin: 50px auto;
   gap: 20px;
   background-color: #fff;
+  padding: 0 50px;
 }
 
 .aboutWrapper {
@@ -68,6 +69,10 @@ a:hover {
 .aboutTable {
   max-width: 800px;
   margin: 50px auto 0 auto;
+}
+.aboutTable > div {
+  background-color: #a4b0be;
+  border-radius: 20px;
 }
 
 .view {

@@ -72,7 +72,7 @@ const AboutTable = () => {
         ],
       },
     ],
-    [handleDelete]
+    [handleDelete, text]
   );
   return (
     <section
