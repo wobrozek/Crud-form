@@ -15,7 +15,7 @@ COPY --from=vite /react-vite-app/dist /usr/share/nginx/html
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx.conf
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["nginx","-g","daemon off;"]
 
