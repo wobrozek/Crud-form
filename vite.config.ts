@@ -7,6 +7,11 @@ export default defineConfig({
   server:{
     host: true,
     strictPort:true,
-    port: 5173
-  }
+    port: 8080
+  },
+  build: {
+    rollupOptions: {
+      external: 'NonExistingPath'
+    }
+  },
 })
