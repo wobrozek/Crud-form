@@ -6,7 +6,7 @@ WORKDIR /react-vite-app
 COPY /dist/. /react-vite-app/dist
 COPY package.json /react-vite-app
 
-# RUN npm install
+RUN npm install
 
 #nginx configuration    
 
