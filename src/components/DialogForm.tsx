@@ -24,13 +24,18 @@ const DialogForm = (id) => {
 
     let humanCopy = { ...human[0] };
 
-    humanCopy.birthDate = humanCopy.birthDate.replace(".", "/");
-    humanCopy.birthDate = dayjs(humanCopy.birthDate);
+    // replace mm - dd and correct redux local date format
+    let dateSplit = humanCopy.birthDate.split(".");
+
+    humanCopy.birthDate = dayjs(
+      `${dateSplit[1]}/${dateSplit[0]}/${dateSplit[2]}`
+    );
 
     setDataDialog(humanCopy);
   };
 
   const onSubmit = (data: Form) => {
+    setOpen(false);
     data.birthDate = data.birthDate.toLocaleDateString();
     data.id = dataDialog.id;
     dispatch(edit(data));
