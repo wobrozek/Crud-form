@@ -16,13 +16,20 @@ const PersonGrid = () => {
               <PersonBox key={index} name={element.name}>
                 <ul>
                   <li>
-                    {text.formAge} : {element.age}
+                    <span className="bold">{text.formAge}</span> : {element.age}
                   </li>
                   <li>
-                    {text.formBirthday} : {element.birthDate}
+                    <span className="bold">{text.formBirthday}</span> :{" "}
+                    {element.birthDate}
                   </li>
                   <li>
-                    {text.formAbout} : {element.about}
+                    {element.about && (
+                      <span>
+                        <span className="bold">{text.formAbout}</span>
+                        {" : "}
+                        {element.about}
+                      </span>
+                    )}
                   </li>
                 </ul>
               </PersonBox>

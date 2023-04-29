@@ -75,11 +75,8 @@ const AboutTable = () => {
     [handleDelete, text]
   );
   return (
-    <section
-      className="aboutWrapper"
-      style={people.length === 0 ? { display: "none" } : { display: "block" }}
-    >
-      {people && (
+    <section className="aboutWrapper">
+      {people.length === 0 && (
         <div className="aboutTable">
           <DataGrid
             rows={people}

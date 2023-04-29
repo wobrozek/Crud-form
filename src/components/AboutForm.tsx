@@ -64,6 +64,10 @@ const AboutForm: FC<FormProps> = (props) => {
     setValue("birthDate", date);
   };
 
+  useEffect(() => {
+    handleDataChange(props.defaultValue?.birthDate);
+  }, [props.defaultValue]);
+
   return (
     <form className="formAbout" onSubmit={handleSubmit(props.onSubmit)}>
       {/* specjal id to edit existing records  */}

@@ -58,6 +58,14 @@ a:hover {
   padding: 0 50px;
 }
 
+.error {
+  margin-left: 50px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .aboutWrapper {
   background-color: #ced6e0;
   width: 100%;
