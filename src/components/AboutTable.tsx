@@ -76,7 +76,7 @@ const AboutTable = () => {
   );
   return (
     <section className="aboutWrapper">
-      {people.length === 0 && (
+      {people.length !== 0 && (
         <div className="aboutTable">
           <DataGrid
             rows={people}
