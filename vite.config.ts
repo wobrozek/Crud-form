@@ -5,8 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   resolve: {
     alias: {
-      'react': 'https://cdn.skypack.dev/react@18.2.0',
-      'react-dom': 'https://cdn.skypack.dev/react-dom@18.2.0'
+      'react': '"https://unpkg.com/react@18/umd/react.production.min.js',
+      'react-dom': 'https://unpkg.com/react-dom@18/umd/react-dom.production.min.js'
     }
   },
   plugins: [
