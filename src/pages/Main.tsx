@@ -1,6 +1,6 @@
 import React from "react";
 import AboutForm from "../components/AboutForm";
-import AboutTable from "../components/Abouttable";
+import AboutTable from "../components/AboutTable";
 import { useDispatch } from "react-redux";
 import { Form, add } from "../redux/form";
 
