@@ -146,10 +146,10 @@ a:hover {
     padding: 10px;
     font-size: 15px;
   }
-  .navbar .personBox {
+  .personBox {
     padding: 5px;
   }
-  .navbar .view {
+  .view {
     padding: 0 10px 50px 10px;
   }
 }
