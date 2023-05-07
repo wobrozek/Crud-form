@@ -73,6 +73,9 @@ a:hover {
   height: 100%;
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 60px);
 }
+.aboutWrapper button {
+  margin-top: 5px;
+}
 
 .aboutTable {
   max-width: 800px;

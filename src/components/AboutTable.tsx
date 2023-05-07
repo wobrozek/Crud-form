@@ -75,27 +75,29 @@ const AboutTable = () => {
     [handleDelete, text]
   );
   return (
-    <section className="aboutWrapper">
+    <>
       {people.length !== 0 && (
-        <div className="aboutTable">
-          <DataGrid
-            rows={people}
-            columns={columns}
-            checkboxSelection
-            disableRowSelectionOnClick
-            disableColumnSelector
-            onRowSelectionModelChange={handleChangeSubmit}
-            initialState={{
-              pagination: { paginationModel: { pageSize: 10 } },
-            }}
-            pageSizeOptions={[10, 20, 50]}
-          />
-          <Button variant="contained" onClick={handleDeleteChecked}>
-            {text.deleteChecked}
-          </Button>
-        </div>
+        <section className="aboutWrapper">
+          <div className="aboutTable">
+            <DataGrid
+              rows={people}
+              columns={columns}
+              checkboxSelection
+              disableRowSelectionOnClick
+              disableColumnSelector
+              onRowSelectionModelChange={handleChangeSubmit}
+              initialState={{
+                pagination: { paginationModel: { pageSize: 10 } },
+              }}
+              pageSizeOptions={[10, 20, 50]}
+            />
+            <Button variant="contained" onClick={handleDeleteChecked}>
+              {text.deleteChecked}
+            </Button>
+          </div>
+        </section>
       )}
-    </section>
+    </>
   );
 };
 
