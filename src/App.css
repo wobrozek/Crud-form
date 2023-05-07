@@ -152,6 +152,9 @@ a:hover {
   .view {
     padding: 0 10px 50px 10px;
   }
+  .view__grid {
+    gap: 10px;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
