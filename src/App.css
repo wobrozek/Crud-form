@@ -125,6 +125,9 @@ a:hover {
   .view__grid {
     grid-template-columns: 1fr 1fr;
   }
+  .aboutTable {
+    margin: 50px 10px 0;
+  }
   .view {
     padding: 0 25px 50px 25px;
   }
@@ -142,6 +145,12 @@ a:hover {
   .navbar a {
     padding: 10px;
     font-size: 15px;
+  }
+  .navbar .personBox {
+    padding: 5px;
+  }
+  .navbar .view {
+    padding: 0 10px 50px 10px;
   }
 }
 

@@ -61,7 +61,7 @@ const AboutTable = () => {
       {
         field: "action",
         type: "actions",
-        width: 200,
+        width: 80,
         getActions: (params) => [
           <GridActionsCellItem
             icon={<DeleteIcon />}
