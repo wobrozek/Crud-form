@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
-import { Select, MenuItem } from "@mui/material";
+import { Select, MenuItem, SelectChangeEvent } from "@mui/material";
 import { change } from "../redux/languages";
 import { NavLink } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const Navbar = () => {
   const text = useSelector((state: RootState) => state.languages.text);
   const dispatch = useDispatch();
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: SelectChangeEvent<any>) => {
     dispatch(change(e.target.value));
   };
 
